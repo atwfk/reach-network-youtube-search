@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { SCREENS } from "./shared/constants";
+import { SCREENS } from "../../constants";
 
 export const GlobalStyle = createGlobalStyle`
     body {
