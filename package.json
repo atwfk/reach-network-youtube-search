@@ -24,10 +24,10 @@
     "pretty": "prettier --write src",
     "lint:fix": "eslint src --fix"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "yarn lint:fix",
+      "yarn pretty"
     ]
   },
   "browserslist": {
@@ -55,6 +55,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "lint-staged": "^12.3.4",
     "prettier": "^2.5.1"
   }
 }
