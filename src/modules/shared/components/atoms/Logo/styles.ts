@@ -6,7 +6,7 @@ export const StyledLogo = styled.div`
   margin-right: 10px;
 
   @media (min-width: ${SCREENS.MD}) {
-    margin-right: 20px;
+    margin-right: 60px;
   }
 
   span {

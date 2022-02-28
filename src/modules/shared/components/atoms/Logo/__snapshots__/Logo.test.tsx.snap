@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Component Should Logo with primary and secondary 1`] = `
+<div
+  className="sc-bdvvtL ibexgz"
+>
+  <span>
+    EG
+  </span>
+  <svg
+    className="primary-logo"
+  >
+    primary-logo.svg
+  </svg>
+  <svg
+    className="secondary-logo"
+  >
+    secondary-logo.svg
+  </svg>
+</div>
+`;
