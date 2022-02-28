@@ -1,8 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Logo Component Should Logo with primary and secondary 1`] = `
+exports[`Logo Component snapshots Should render Logo with primary and secondary 1`] = `
+.c0 {
+  position: relative;
+  margin-right: 10px;
+}
+
+.c0 span {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 20px;
+  color: #9d9d9d;
+  font-size: 12px;
+}
+
+.c0 .primary-logo {
+  width: 180px;
+  height: 40px;
+  display: none;
+}
+
+.c0 .secondary-logo {
+  width: 60px;
+  height: 40px;
+  background-color: red;
+  display: block;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    margin-right: 60px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 span {
+    display: block;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 .primary-logo {
+    display: block;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 .secondary-logo {
+    display: none;
+  }
+}
+
 <div
-  className="sc-bdvvtL ibexgz"
+  className="c0"
 >
   <span>
     EG
