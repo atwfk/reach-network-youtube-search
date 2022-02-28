@@ -3,6 +3,7 @@ import type { FC, ReactElement } from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./modules/HomePage";
 import Layout from "./modules/shared/HOC/Layout";
+import SearchPage from "./modules/SearchPage";
 
 const App: FC = (): ReactElement => {
   return (
@@ -10,7 +11,7 @@ const App: FC = (): ReactElement => {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/search" element={<h1>Search Page</h1>} />
+          <Route path="/search" element={<SearchPage />} />
         </Routes>
       </Layout>
     </div>
