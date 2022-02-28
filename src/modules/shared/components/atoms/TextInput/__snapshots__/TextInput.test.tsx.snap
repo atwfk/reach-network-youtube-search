@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput Component snapshots Should render input element with delete icon when input has value 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c0 input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #9d9d9d;
+  font-size: 16px;
+  outline: none;
+  border-radius: 2px;
+}
+
+.c0 input:focus {
+  border-color: #3ea6ff;
+}
+
+.c0 button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.c0 .remove-text {
+  color: #9d9d9d;
+}
+
+@media (min-width:768px) {
+  .c0 input {
+    padding: 10px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 button {
+    right: 20px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <input
+    data-testid="text-input"
+    id="1"
+    name="search"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+    value="sabba7"
+  />
+  <button
+    data-testid="delete-btn"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    <svg
+      className="remove-text"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 1024 1024"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`TextInput Component snapshots Should render input element without delete icon when input is empty 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c0 input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #9d9d9d;
+  font-size: 16px;
+  outline: none;
+  border-radius: 2px;
+}
+
+.c0 input:focus {
+  border-color: #3ea6ff;
+}
+
+.c0 button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.c0 .remove-text {
+  color: #9d9d9d;
+}
+
+@media (min-width:768px) {
+  .c0 input {
+    padding: 10px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 button {
+    right: 20px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <input
+    data-testid="text-input"
+    id="1"
+    name="search"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+    value=""
+  />
+  
+</div>
+`;

@@ -16,6 +16,7 @@ const TextInput: FC<ITextInput.IProps> = ({
     <StyledInputContainer>
       <input
         type="text"
+        data-testid="text-input"
         name={name}
         id={id}
         placeholder={placeholder}
@@ -23,7 +24,7 @@ const TextInput: FC<ITextInput.IProps> = ({
         onChange={(e) => changed(e.currentTarget.value)}
       />
       {value && (
-        <button type="button" onClick={deleteText}>
+        <button type="button" onClick={deleteText} data-testid="delete-btn">
           <AiOutlineClose className="remove-text" />
         </button>
       )}
