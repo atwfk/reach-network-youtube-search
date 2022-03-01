@@ -1,15 +1,6 @@
 import { IGetSearchRes } from "../../../SearchPage/api/getSearchRes/IGetSearchRes";
 import { ESearchKind } from "../../types/searchData/ESearchTypes";
-
-type FilterSearchListByKind = {
-  searchList: IGetSearchRes.ISearchItemApi[];
-  searchKind: ESearchKind;
-};
-
-type GetSearchListIds = {
-  searchList: IGetSearchRes.ISearchItemApi[];
-  keyId: "videoId" | "channelId" | "playlistId";
-};
+import { FilterSearchListByKind, GetSearchListIds } from "./ITransformSearchListIds";
 
 export const filterSearchListByKind = ({
   searchList,
