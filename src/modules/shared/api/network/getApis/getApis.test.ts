@@ -1,14 +1,13 @@
-import axios from "axios";
 import api from "../../.";
 import { getApis } from "./getApis";
 
 jest.mock("../../.");
 
-const mockedApi = api as jest.Mocked<typeof axios>;
+const mockedApi = api as jest.Mocked<typeof api>;
 
 describe("getApis", () => {
   it("should return success function with array of requested data in success case", async () => {
-    const request = [
+    const requests = [
       {
         data: { name: "ahmed" },
         status: 200,
@@ -32,7 +31,10 @@ describe("getApis", () => {
       }
     ];
 
-    mockedApi.get.mockResolvedValue(request);
+    mockedApi.get
+      .mockImplementationOnce(() => Promise.resolve(requests[0]))
+      .mockImplementationOnce(() => Promise.resolve(requests[1]))
+      .mockImplementationOnce(() => Promise.resolve(requests[2]));
 
     const response = await getApis(
       ["endpoint/1", "endpoint/2", "endpoint/3"],
@@ -40,7 +42,7 @@ describe("getApis", () => {
       () => {}
     );
 
-    const results = [request, request, request];
+    const results = requests;
 
     expect(JSON.stringify(response)).toEqual(JSON.stringify(results));
   });
