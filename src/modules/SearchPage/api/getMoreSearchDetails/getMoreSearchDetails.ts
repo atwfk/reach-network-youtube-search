@@ -1,5 +1,5 @@
 import { API_KEY } from "../../../shared/api";
-import { getApis } from "../../../shared/api/network";
+import { getApis } from "../../../shared/api/network/getApis/getApis";
 import { IError } from "../../../shared/types/IError";
 import { IGetMoreSearchDetails } from "./IGetMoreSearchDetails";
 

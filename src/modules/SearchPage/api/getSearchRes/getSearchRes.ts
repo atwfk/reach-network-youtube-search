@@ -1,5 +1,5 @@
 import { API_KEY } from "../../../shared/api";
-import { getApi } from "../../../shared/api/network";
+import { getApi } from "../../../shared/api/network/getApi/getApi";
 import { VIDEOS_LIMITS } from "../../../shared/constants";
 import { IError } from "../../../shared/types/IError";
 import { IGetSearchRes } from "./IGetSearchRes";
