@@ -30,7 +30,7 @@ export const getApis = async <T, X, Y>(
     return onError({
       isError: true,
       errors: errors[0],
-      message: errors[0].message,
+      message: errors[0].reason,
       errorCode: code
     });
   } finally {
