@@ -1,10 +1,11 @@
+import { ESearchKind } from "./ESearchTypes";
 import { IData } from "./IData";
 
 export interface IPlaylist {
   kind: "youtube#searchResult";
   etag: string;
   id: {
-    kind: "youtube#playlist";
+    kind: ESearchKind.PLAYLIST;
     playlistId: string;
   };
   snippet: IData.ISnippet;

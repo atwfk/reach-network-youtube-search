@@ -7,7 +7,7 @@ declare namespace IGetMoreSearchDetails {
       duration: string;
       dimension: "2d" | "3d";
       definition: "hd" | "sd";
-      caption: boolean;
+      caption: string;
       licensedContent: boolean;
       contentRating: Record<string, string>;
       projection: string;

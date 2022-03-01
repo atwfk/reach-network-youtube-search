@@ -1,25 +1,12 @@
+import type {
+  AddAllSearchListDetails,
+  TransformSearchListDetails
+} from "./IAddAllSearchListDetails.d";
 import { IGetMoreSearchDetails } from "../../../SearchPage/api/getMoreSearchDetails/IGetMoreSearchDetails";
-import { IGetSearchRes } from "../../../SearchPage/api/getSearchRes/IGetSearchRes";
 import { IData } from "../../types/searchData/IData";
 import { IVideo } from "../../types/searchData/IVideo";
 import { IChannel } from "../../types/searchData/IChannel";
 import { IPlaylist } from "../../types/searchData/IPlaylist";
-
-type TransformSearchListDetails = {
-  videos: IGetMoreSearchDetails.IVideoResApi;
-  channels: IGetMoreSearchDetails.IChannelResApi;
-  playlists: IGetMoreSearchDetails.IPlayListResApi;
-};
-
-type AddAllSearchListDetails = {
-  searchData: IGetSearchRes.IResApi;
-  searchListDetails: Map<
-    string,
-    | IGetMoreSearchDetails.IVideoDetailsApi
-    | IGetMoreSearchDetails.IChannelDetailsApi
-    | IGetMoreSearchDetails.IPlayListDetailsApi
-  >;
-};
 
 export const transformSearchListDetails = ({
   videos,
