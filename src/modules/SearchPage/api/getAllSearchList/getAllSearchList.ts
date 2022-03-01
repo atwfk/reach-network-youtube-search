@@ -9,11 +9,13 @@ import { getSearchRes } from "../getSearchRes/getSearchRes";
 import { IGetSearchRes } from "../getSearchRes/IGetSearchRes";
 import { IData } from "../../../shared/types/searchData/IData";
 
+type GetAllSearchList = {
+  query: string;
+};
+
 export const getAllSearchList = async ({
   query
-}: {
-  query: string;
-}): Promise<IData.IMainData | IError.IErrorData> => {
+}: GetAllSearchList): Promise<IData.IMainData | IError.IErrorData> => {
   try {
     const searchSnippets = (await getSearchRes({ query })) as IGetSearchRes.IResApi;
 

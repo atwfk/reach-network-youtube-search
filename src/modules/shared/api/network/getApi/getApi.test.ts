@@ -1,10 +1,9 @@
-import axios from "axios";
 import api from "../../.";
 import { getApi } from "./getApi";
 
 jest.mock("../../.");
 
-const mockedApi = api as jest.Mocked<typeof axios>;
+const mockedApi = api as jest.Mocked<typeof api>;
 
 describe("getApi", () => {
   it("should return success function with the requested data in success case", async () => {

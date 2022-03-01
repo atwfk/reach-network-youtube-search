@@ -1,48 +1,22 @@
 import api from "../../../shared/api/";
-import { getMoreSearchDetails } from "./getMoreSearchDetails";
+import { getAllSearchList } from "./getAllSearchList";
+import { requests, results } from "./mockedData";
 
 jest.mock("../../../shared/api/");
 
 const mockedApi = api as jest.Mocked<typeof api>;
 
-describe("getMoreSearchDetails", () => {
-  it("should return array of requested data in success case", async () => {
-    const requests = [
-      {
-        data: { name: "ahmed" },
-        status: 200,
-        statusText: "ok",
-        headers: "any",
-        config: {}
-      },
-      {
-        data: { name: "omar" },
-        status: 200,
-        statusText: "ok",
-        headers: "any",
-        config: {}
-      },
-      {
-        data: { name: "ali" },
-        status: 200,
-        statusText: "ok",
-        headers: "any",
-        config: {}
-      }
-    ];
-
+describe("getAllSearchList", () => {
+  it("should return array of requested search list in success case", async () => {
     mockedApi.get
       .mockImplementationOnce(() => Promise.resolve(requests[0]))
       .mockImplementationOnce(() => Promise.resolve(requests[1]))
-      .mockImplementationOnce(() => Promise.resolve(requests[2]));
+      .mockImplementationOnce(() => Promise.resolve(requests[2]))
+      .mockImplementationOnce(() => Promise.resolve(requests[3]));
 
-    const response = await getMoreSearchDetails({
-      videosId: "2,1",
-      channelsId: "3,5",
-      playlistsId: "0,4"
+    const response = await getAllSearchList({
+      query: "sd"
     });
-
-    const results = [{ name: "ahmed" }, { name: "omar" }, { name: "ali" }];
 
     expect(JSON.stringify(response)).toEqual(JSON.stringify(results));
   });
@@ -51,10 +25,8 @@ describe("getMoreSearchDetails", () => {
     mockedApi.get.mockRejectedValue({ message: "Network Error" });
 
     try {
-      await getMoreSearchDetails({
-        videosId: "2,1",
-        channelsId: "3,5",
-        playlistsId: "0,4"
+      await getAllSearchList({
+        query: "sd"
       });
     } catch (error: unknown) {
       const expectedData = {
@@ -86,10 +58,8 @@ describe("getMoreSearchDetails", () => {
     });
 
     try {
-      await getMoreSearchDetails({
-        videosId: "2,1",
-        channelsId: "3,5",
-        playlistsId: "0,4"
+      await getAllSearchList({
+        query: "sd"
       });
     } catch (error: unknown) {
       const expectedData = {
