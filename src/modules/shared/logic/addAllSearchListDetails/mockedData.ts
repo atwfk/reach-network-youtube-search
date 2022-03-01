@@ -1,7 +1,6 @@
 import { IGetMoreSearchDetails } from "../../../SearchPage/api/getMoreSearchDetails/IGetMoreSearchDetails";
 import { IGetSearchRes } from "../../../SearchPage/api/getSearchRes/IGetSearchRes";
 import { ESearchKind } from "../../types/searchData/ESearchTypes";
-import { IData } from "../../types/searchData/IData";
 
 export const videosDetails: IGetMoreSearchDetails.IVideoResApi = {
   kind: "youtube#videoListResponse",
@@ -235,7 +234,7 @@ export const searchSnippets: IGetSearchRes.IResApi = {
   ]
 };
 
-export const searchListDetailsRes: IData.IMainData = {
+export const searchListDetailsRes = {
   kind: "youtube#searchListResponse",
   etag: "cq-FulckYwkJSxhhTc36gDsy08I",
   nextPageToken: "CAQQAA",
