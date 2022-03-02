@@ -108,7 +108,7 @@ exports[`Navbar Component snapshots Should render Navbar component 1`] = `
 
 .c0 {
   background-color: red;
-  box-shadow: 0px 4px 4px #f1f2f3;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
   padding: 5px 20px;
 }
 
@@ -181,6 +181,10 @@ exports[`Navbar Component snapshots Should render Navbar component 1`] = `
   .c0 {
     background-color: white;
     padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
   }
 }
 
