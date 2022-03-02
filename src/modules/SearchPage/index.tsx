@@ -24,7 +24,7 @@ const SearchPage: FC = (): ReactElement => {
       } catch (err: unknown) {
         const { errorCode, errors, isError, message } = err as IError.IErrorData;
 
-        console.log({ errorCode, errors, isError, message });
+        alert({ errorCode, errors, isError, message });
       } finally {
         setLoading(false);
       }
