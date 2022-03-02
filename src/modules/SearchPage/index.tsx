@@ -4,20 +4,17 @@ import { useLocation } from "react-router-dom";
 import { IError } from "../shared/types/IError";
 import { IData } from "../shared/types/searchData/IData";
 import { getAllSearchList } from "./api/getAllSearchList/getAllSearchList";
+import SearchList from "../shared/components/organisms/SearchList";
 
 const SearchPage: FC = (): ReactElement => {
-  const [data, setData] = useState<null | IData.IMainData>(null);
-  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<IData.IMainData | null>(null);
+  const [loading, setLoading] = useState(true);
   const { search } = useLocation();
-
-  console.log(data);
-  console.log(loading);
 
   const query = useMemo(() => new URLSearchParams(search), [search]);
 
   useEffect(() => {
     const getSearchData = async () => {
-      setLoading(true);
       try {
         const searchListDetails = (await getAllSearchList({
           query: query.get("query") ?? ""
@@ -34,9 +31,9 @@ const SearchPage: FC = (): ReactElement => {
     };
 
     getSearchData();
-  }, []);
+  }, [query]);
 
-  return <h1>Search Page</h1>;
+  return <div>{!loading && <SearchList searchList={data?.items ?? []} />}</div>;
 };
 
 export default SearchPage;

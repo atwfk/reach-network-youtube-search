@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
         "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: #efefef;
     }
     code {
       font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -16,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 20px;
         max-width: ${SCREENS.LG};
         margin: auto;
+
+        @media (min-width: ${SCREENS.MD}) {
+         margin-top: 80px
+        }
     }
     a {
       color: inherit;
@@ -29,5 +34,8 @@ export const GlobalStyle = createGlobalStyle`
     button {
       background-color: transparent;
       border: none;
+    }
+    ul {
+      list-style: none;
     }
 `;
