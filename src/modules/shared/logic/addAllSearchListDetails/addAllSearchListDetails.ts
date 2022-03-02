@@ -18,7 +18,11 @@ export const transformSearchListDetails = ({
   | IGetMoreSearchDetails.IChannelDetailsApi
   | IGetMoreSearchDetails.IPlayListDetailsApi
 > => {
-  const searchListDetails = [...videos.items, ...channels.items, ...playlists.items];
+  const searchListDetails = [
+    ...(videos?.items ?? []),
+    ...(channels.items ?? []),
+    ...(playlists?.items ?? [])
+  ];
 
   const mapSearchList = new Map();
 
