@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://www.googleapis.com/youtube/v3"
+  baseURL: process.env.REACT_APP_BASE_URL
 });
 
-export const API_KEY = "AIzaSyDvYkxaTMZKGvCdWgvaJUm9ahK2QbSizNw";
+export const API_KEY = process.env.REACT_APP_API_KEY;
 
 export default api;
