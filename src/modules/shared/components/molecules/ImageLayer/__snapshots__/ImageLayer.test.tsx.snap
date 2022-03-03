@@ -1,6 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageLayer Component snapshots Should render ImageLayer component with duration when we pass duration prop 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 .channel {
+  border-radius: 50%;
+}
+
 .c0 {
   position: relative;
   color: #f1f0f0;
@@ -46,12 +65,18 @@ exports[`ImageLayer Component snapshots Should render ImageLayer component with 
 <div
   className="c0 image-container"
 >
-  <img
-    alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
-    height="180"
-    src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
-    width="320"
-  />
+  <div
+    className="c1"
+  >
+    <img
+      alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+      className=""
+      data-testid="image"
+      height="180"
+      src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
+      width="320"
+    />
+  </div>
   <span
     className="duration"
     data-testid="duration"
@@ -62,6 +87,25 @@ exports[`ImageLayer Component snapshots Should render ImageLayer component with 
 `;
 
 exports[`ImageLayer Component snapshots Should render ImageLayer component with number of playlist videos when we pass playlistCount prop 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 .channel {
+  border-radius: 50%;
+}
+
 .c0 {
   position: relative;
   color: #f1f0f0;
@@ -107,12 +151,18 @@ exports[`ImageLayer Component snapshots Should render ImageLayer component with 
 <div
   className="c0 image-container"
 >
-  <img
-    alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
-    height="180"
-    src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
-    width="320"
-  />
+  <div
+    className="c1"
+  >
+    <img
+      alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+      className=""
+      data-testid="image"
+      height="180"
+      src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
+      width="320"
+    />
+  </div>
   <span
     className="playlist-count"
     data-testid="playlist-count"
