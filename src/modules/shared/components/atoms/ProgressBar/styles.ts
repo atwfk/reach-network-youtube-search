@@ -14,12 +14,12 @@ export const StyledProgress = styled.div`
     background: red;
     top: 0;
     position: absolute;
-    animation: loader 2s;
+    animation: progressLoader 2s;
     animation-iteration-count: infinite;
     transition-timing-function: linear;
   }
 
-  @keyframes loader {
+  @keyframes progressLoader {
     0% {
       width: 0%;
     }

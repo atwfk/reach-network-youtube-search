@@ -7,13 +7,13 @@ export const StyledSpinner = styled.div`
 
   .spinner {
     font-size: 50px;
-    animation: loader 2s;
+    animation: spinnerLoader 2s;
     animation-iteration-count: infinite;
     transition-timing-function: ease;
     color: #767272;
   }
 
-  @keyframes loader {
+  @keyframes spinnerLoader {
     0% {
       transform: rotate(0);
     }
