@@ -4,26 +4,23 @@ export const formatNumberWithCommas = (number: number): string => {
 
 export const formateIntNum = (strNumber: string): string => {
   const number = +strNumber;
-  const billion = 1_000_000_000;
-  const million = 1_000_000;
-  const thousand = 1_000;
 
-  if (number > billion) {
-    const floatedNum = (number / billion).toFixed(1);
+  const symbols: { value: number; symbol: string }[] = [
+    { value: 1e18, symbol: "E" },
+    { value: 1e15, symbol: "P" },
+    { value: 1e12, symbol: "T" },
+    { value: 1e9, symbol: "B" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e3, symbol: "K" }
+  ];
 
-    return `${floatedNum}B`;
-  }
+  const filteredSymbol = symbols.find(({ value }) => {
+    return number >= value;
+  });
 
-  if (number > million) {
-    const floatedNum = (number / million).toFixed(1);
-
-    return `${floatedNum}M`;
-  }
-
-  if (number > thousand) {
-    const floatedNum = (number / thousand).toFixed(1);
-
-    return `${floatedNum}K`;
+  if (filteredSymbol) {
+    const floatedNum = (number / filteredSymbol?.value).toFixed(1);
+    return `${floatedNum}${filteredSymbol?.symbol}`;
   }
 
   return strNumber;
