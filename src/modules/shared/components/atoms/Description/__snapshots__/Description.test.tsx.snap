@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description Component snapshots Should render simple Description component 1`] = `
+.c0 {
+  color: #767272;
+  font-size: 15px;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 20px;
+  }
+}
+
+<p
+  className="c0 description"
+>
+  Full Kubernetes Tutorial | Kubernetes Course | Hands-on course with a lot of demos Become a Kubernetes Administrator - CKA: ...
+</p>
+`;

@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stats Component snapshots Should render only with item without point separated 1`] = `
+.c0 {
+  display: block;
+  color: #767272;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.c0 li {
+  margin-right: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 li .separator {
+  margin-left: 6px;
+  width: 2px;
+  height: 2px;
+  background-color: #767272;
+  display: none;
+}
+
+@media (min-width:640px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:640px) {
+  .c0 li .separator {
+    display: block;
+  }
+}
+
+<ul
+  className="c0 stats"
+>
+  <li
+    data-testid="stat"
+  >
+    TechWorld with Nana
+     
+  </li>
+</ul>
+`;
+
+exports[`Stats Component snapshots Should render three items of statistics with point separated 1`] = `
+.c0 {
+  display: block;
+  color: #767272;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.c0 li {
+  margin-right: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 li .separator {
+  margin-left: 6px;
+  width: 2px;
+  height: 2px;
+  background-color: #767272;
+  display: none;
+}
+
+@media (min-width:640px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:640px) {
+  .c0 li .separator {
+    display: block;
+  }
+}
+
+<ul
+  className="c0 stats"
+>
+  <li
+    data-testid="stat"
+  >
+    TechWorld with Nana
+     
+    <span
+      className="separator"
+    />
+  </li>
+  <li
+    data-testid="stat"
+  >
+    3.6M views
+     
+    <span
+      className="separator"
+    />
+  </li>
+  <li
+    data-testid="stat"
+  >
+    a year ago
+     
+  </li>
+</ul>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title Component snapshots Should render simple Title component 1`] = `
+.c0 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 25px;
+  }
+}
+
+<h3
+  className="c0 title"
+  title="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+>
+  Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]
+</h3>
+`;

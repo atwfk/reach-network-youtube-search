@@ -6,7 +6,7 @@ const Stats: FC<{ stats: string[] }> = ({ stats }): ReactElement => {
   return (
     <StyledStats className="stats">
       {stats.map((stat, index, items) => (
-        <li key={stat}>
+        <li key={stat} data-testid="stat">
           {stat} {items.length !== index + 1 && <span className="separator"></span>}
         </li>
       ))}
