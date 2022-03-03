@@ -30,9 +30,9 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
 
         setData(searchListDetails);
       } catch (err: unknown) {
-        const { errorCode, errors, isError, message } = err as IError.IErrorData;
+        const { message } = err as IError.IErrorData;
 
-        alert({ errorCode, errors, isError, message });
+        alert(message);
       } finally {
         setLoading(false);
       }
