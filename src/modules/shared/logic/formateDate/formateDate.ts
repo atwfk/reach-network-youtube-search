@@ -9,5 +9,11 @@ export const humanReadableDate = (date: string): string => {
   return dayjs(date).from(dayjs());
 };
 
-export const convertVideoDuration = (vidDuration: string): string =>
-  dayjs.duration(vidDuration).format("mm:ss");
+export const formatVideoDuration = (vidDuration: string): string => {
+  const durationData = dayjs.duration(vidDuration);
+  if (+durationData.asHours().toFixed(0) > 0) {
+    return durationData.format("HH:mm:ss");
+  }
+
+  return durationData.format("mm:ss");
+};

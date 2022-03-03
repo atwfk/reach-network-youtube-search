@@ -1,4 +1,8 @@
-export const transformIntNum = (strNumber: string): string => {
+export const formatNumberWithCommas = (number: number): string => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+export const formateIntNum = (strNumber: string): string => {
   const number = +strNumber;
   const billion = 1_000_000_000;
   const million = 1_000_000;

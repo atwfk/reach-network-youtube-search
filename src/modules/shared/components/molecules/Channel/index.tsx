@@ -1,7 +1,7 @@
 import React from "react";
 import type { FC, ReactElement } from "react";
 import ItemDetails from "../ItemDetails";
-import { transformIntNum } from "../../../logic/transformIntNum/transformIntNum";
+import { formateIntNum } from "../../../logic/transformIntNum/transformIntNum";
 import ImageLayer from "../ImageLayer";
 import { useMedia } from "../../../hooks/useMedia";
 import { SCREENS } from "../../../constants";
@@ -14,8 +14,8 @@ const Channel: FC<{ channel: IChannel }> = ({ channel }): ReactElement => {
   const imageHeight = matched ? 90 : 180;
 
   const stats = [
-    `${transformIntNum(channel.statistics.subscriberCount)} subscribers`,
-    `${transformIntNum(channel.statistics.videoCount)} videos`
+    `${formateIntNum(channel.statistics.subscriberCount)} subscribers`,
+    `${formateIntNum(channel.statistics.videoCount)} videos`
   ];
 
   return (
