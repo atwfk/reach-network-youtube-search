@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageLayer Component snapshots Should render ImageLayer component with duration when we pass duration prop 1`] = `
+.c0 {
+  position: relative;
+  color: #f1f0f0;
+}
+
+.c0 .duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,0.7);
+  padding: 1px;
+}
+
+.c0 .playlist-count {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  width: 40%;
+  height: 97%;
+  background-color: rgba(0,0,0,0.7);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .playlist-count .playlist-icon {
+  font-size: 25px;
+  margin-top: 6px;
+}
+
+<div
+  className="c0 image-container"
+>
+  <img
+    alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+    height="180"
+    src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
+    width="320"
+  />
+  <span
+    className="duration"
+    data-testid="duration"
+  >
+    03:36:55
+  </span>
+</div>
+`;
+
+exports[`ImageLayer Component snapshots Should render ImageLayer component with number of playlist videos when we pass playlistCount prop 1`] = `
+.c0 {
+  position: relative;
+  color: #f1f0f0;
+}
+
+.c0 .duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,0.7);
+  padding: 1px;
+}
+
+.c0 .playlist-count {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  width: 40%;
+  height: 97%;
+  background-color: rgba(0,0,0,0.7);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .playlist-count .playlist-icon {
+  font-size: 25px;
+  margin-top: 6px;
+}
+
+<div
+  className="c0 image-container"
+>
+  <img
+    alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+    height="180"
+    src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
+    width="320"
+  />
+  <span
+    className="playlist-count"
+    data-testid="playlist-count"
+  >
+    13
+    <svg
+      className="playlist-icon"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16 5H4V7H16V5Z"
+        fill="currentColor"
+      />
+      <path
+        d="M16 9H4V11H16V9Z"
+        fill="currentColor"
+      />
+      <path
+        d="M4 13H12V15H4V13Z"
+        fill="currentColor"
+      />
+      <path
+        d="M20 16L14 13V19L20 16Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+</div>
+`;

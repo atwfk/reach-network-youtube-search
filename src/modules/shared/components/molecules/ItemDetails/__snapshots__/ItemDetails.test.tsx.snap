@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title ItemDetails snapshots Should render ItemDetails component with title, description, and stats 1`] = `
+.c1 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.c2 {
+  display: block;
+  color: #767272;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.c2 li {
+  margin-right: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 li .separator {
+  margin-left: 6px;
+  width: 2px;
+  height: 2px;
+  background-color: #767272;
+  display: none;
+}
+
+.c3 {
+  color: #767272;
+  font-size: 15px;
+}
+
+.c0 .title {
+  margin-bottom: 4px;
+}
+
+.c0 .description {
+  display: none;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width:640px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:640px) {
+  .c2 li .separator {
+    display: block;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width:640px) {
+  .c0 .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+}
+
+@media (min-width:640px) {
+  .c0 .stats {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width:640px) {
+  .c0 .description {
+    display: block;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h3
+    className="c1 title"
+    title="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+  >
+    Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]
+  </h3>
+  <ul
+    className="c2 stats"
+  >
+    <li
+      data-testid="stat"
+    >
+      TechWorld with Nana
+       
+      <span
+        className="separator"
+      />
+    </li>
+    <li
+      data-testid="stat"
+    >
+      3.6M views
+       
+      <span
+        className="separator"
+      />
+    </li>
+    <li
+      data-testid="stat"
+    >
+      a year ago
+       
+    </li>
+  </ul>
+  <p
+    className="c3 description"
+  >
+    Full Kubernetes Tutorial | Kubernetes Course | Hands-on course with a lot of demos Become a Kubernetes Administrator - CKA: ...
+  </p>
+</div>
+`;

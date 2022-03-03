@@ -16,9 +16,13 @@ const ImageLayer: FC<IImageLayer.IProps> = ({
   return (
     <StyledImageLayer className="image-container">
       <Image alt={alt} height={`${height}`} width={`${width}`} src={src} />
-      {duration && <span className="duration">{duration}</span>}
+      {duration && (
+        <span className="duration" data-testid="duration">
+          {duration}
+        </span>
+      )}
       {playlistCount && (
-        <span className="playlist-count">
+        <span className="playlist-count" data-testid="playlist-count">
           {playlistCount}
           <CgPlayList className="playlist-icon" />
         </span>
