@@ -5,6 +5,7 @@ import { IError } from "../shared/types/IError";
 import { IData } from "../shared/types/searchData/IData";
 import { getAllSearchList } from "./api/getAllSearchList/getAllSearchList";
 import SearchList from "../shared/components/organisms/SearchList";
+import SearchHeader from "./components/SearchHeader";
 
 const SearchPage: FC = (): ReactElement => {
   const [data, setData] = useState<IData.IMainData | null>(null);
@@ -33,7 +34,16 @@ const SearchPage: FC = (): ReactElement => {
     getSearchData();
   }, [query]);
 
-  return <div>{!loading && <SearchList searchList={data?.items ?? []} />}</div>;
+  return (
+    <>
+      {!loading && (
+        <>
+          <SearchHeader totalResults={data?.pageInfo.totalResults ?? 0} />
+          <SearchList searchList={data?.items ?? []} />
+        </>
+      )}
+    </>
+  );
 };
 
 export default SearchPage;
