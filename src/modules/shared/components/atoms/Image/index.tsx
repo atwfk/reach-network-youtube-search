@@ -9,7 +9,14 @@ const Image: FC<IImage.IProps> = ({ src, alt, width, height, isChannel }): React
 
   return (
     <StyledImageContainer>
-      <img src={src} alt={alt} width={width} height={height} className={imageClasses} />
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={imageClasses}
+        data-testid="image"
+      />
     </StyledImageContainer>
   );
 };
