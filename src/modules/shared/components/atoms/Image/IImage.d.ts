@@ -4,6 +4,7 @@ declare namespace IImage {
     alt: string;
     width?: string;
     height?: string;
+    isChannel?: boolean;
   }
 }
 

@@ -6,6 +6,7 @@ declare namespace IImageLayer {
     height?: string;
     duration?: string;
     playlistCount?: number;
+    isChannel?: boolean;
   }
 }
 

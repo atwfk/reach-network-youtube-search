@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledHomePage = styled.section`
   display: flex;
-  justify-content: ce;
+  justify-content: center;
 `;
 
 const HomePage: FC = (): ReactElement => {

@@ -25,6 +25,7 @@ const Channel: FC<{ channel: IChannel }> = ({ channel }): ReactElement => {
         width={`${imageWidth}`}
         height={`${imageHeight}`}
         src={channel.snippet.thumbnails.medium.url}
+        isChannel
       />
       <ItemDetails
         description={channel.snippet.description}
