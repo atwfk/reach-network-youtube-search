@@ -13,6 +13,7 @@ import { IVideo } from "../shared/types/searchData/IVideo";
 import { IChannel } from "../shared/types/searchData/IChannel";
 import { IPlaylist } from "../shared/types/searchData/IPlaylist";
 import { useQuery } from "../shared/hooks/useQuery";
+import { toast } from "react-toastify";
 
 const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> = ({
   setLoading,
@@ -35,7 +36,7 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
       } catch (err: unknown) {
         const { message } = err as IError.IErrorData;
 
-        alert(message);
+        toast.error(message);
       } finally {
         setLoading(false);
       }
@@ -68,7 +69,7 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
     } catch (err: unknown) {
       const { message } = err as IError.IErrorData;
 
-      alert(message);
+      toast.error(message);
     } finally {
       setLoading(false);
     }
