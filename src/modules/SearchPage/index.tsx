@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import type { FC, ReactElement } from "react";
-import { useLocation } from "react-router-dom";
 import { IError } from "../shared/types/IError";
 import { IData } from "../shared/types/searchData/IData";
 import { getAllSearchList } from "./api/getAllSearchList/getAllSearchList";
@@ -13,6 +12,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { IVideo } from "../shared/types/searchData/IVideo";
 import { IChannel } from "../shared/types/searchData/IChannel";
 import { IPlaylist } from "../shared/types/searchData/IPlaylist";
+import { useQuery } from "../shared/hooks/useQuery";
 
 const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> = ({
   setLoading,
@@ -21,10 +21,8 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
   const [data, setData] = useState<IData.IMainData | null>(null);
   const [hasMoreSearchList, setHasMoreSearchList] = useState<boolean>(true);
 
-  const { search } = useLocation();
   const matched = useMedia(`(max-width: ${SCREENS.SM})`);
-  const query = useMemo(() => new URLSearchParams(search), [search]);
-  const value = query.get("query") ?? "";
+  const value = useQuery().get("query") ?? "";
 
   useEffect(() => {
     const getSearchData = async () => {
@@ -44,7 +42,7 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
     };
 
     getSearchData();
-  }, [query]);
+  }, [value]);
 
   const getMoreSearchList = async () => {
     setLoading(true);
