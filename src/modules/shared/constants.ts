@@ -1,4 +1,4 @@
-export const VIDEOS_LIMITS = 30;
+export const VIDEOS_LIMITS = 10;
 
 export const SCREENS = {
   SM: "640px",

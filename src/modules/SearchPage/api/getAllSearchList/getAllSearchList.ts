@@ -11,13 +11,15 @@ import { IData } from "../../../shared/types/searchData/IData";
 
 type GetAllSearchList = {
   query: string;
+  nextPageToken?: string;
 };
 
 export const getAllSearchList = async ({
-  query
+  query,
+  nextPageToken
 }: GetAllSearchList): Promise<IData.IMainData | IError.IErrorData> => {
   try {
-    const searchSnippets = (await getSearchRes({ query })) as IGetSearchRes.IResApi;
+    const searchSnippets = (await getSearchRes({ query, nextPageToken })) as IGetSearchRes.IResApi;
 
     const [videosId, channelsId, playlistsId] = transformSearchListIds(searchSnippets.items);
 

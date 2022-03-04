@@ -9,15 +9,20 @@ import SearchHeader from "./components/SearchHeader";
 import { useMedia } from "../shared/hooks/useMedia";
 import { SCREENS } from "../shared/constants";
 import Spinner from "../shared/components/atoms/Spinner";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { IVideo } from "../shared/types/searchData/IVideo";
+import { IChannel } from "../shared/types/searchData/IChannel";
+import { IPlaylist } from "../shared/types/searchData/IPlaylist";
 
 const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> = ({
   setLoading,
   loading
 }): ReactElement => {
   const [data, setData] = useState<IData.IMainData | null>(null);
+  const [hasMoreSearchList, setHasMoreSearchList] = useState<boolean>(true);
+
   const { search } = useLocation();
   const matched = useMedia(`(max-width: ${SCREENS.SM})`);
-
   const query = useMemo(() => new URLSearchParams(search), [search]);
   const value = query.get("query") ?? "";
 
@@ -41,17 +46,38 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
     getSearchData();
   }, [query]);
 
-  if (matched && loading) {
-    return <Spinner />;
-  }
+  const getMoreSearchList = async () => {
+    setLoading(true);
 
-  if (loading && data) {
-    return (
-      <>
-        <SearchHeader totalResults={data?.pageInfo.totalResults ?? 0} />
-        <SearchList searchList={data?.items ?? []} />
-      </>
-    );
+    try {
+      const searchListDetails = (await getAllSearchList({
+        query: value,
+        nextPageToken: data?.nextPageToken
+      })) as IData.IMainData;
+
+      const totalResults = data?.pageInfo?.totalResults ?? 0;
+      const length = data?.items?.length ?? 0 + 1;
+
+      setHasMoreSearchList(totalResults > length);
+      setData({
+        ...(data as IData.IMainData),
+        nextPageToken: searchListDetails.nextPageToken,
+        items: [
+          ...(data?.items as IVideo[] | IChannel[] | IPlaylist[]),
+          ...searchListDetails.items
+        ] as IVideo[] | IChannel[] | IPlaylist[]
+      });
+    } catch (err: unknown) {
+      const { message } = err as IError.IErrorData;
+
+      alert(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (matched && loading && !data) {
+    return <Spinner />;
   }
 
   return (
@@ -59,7 +85,15 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
       {data && (
         <>
           <SearchHeader totalResults={data?.pageInfo.totalResults ?? 0} />
-          <SearchList searchList={data?.items ?? []} />
+          <InfiniteScroll
+            dataLength={data?.items.length}
+            next={getMoreSearchList}
+            hasMore={hasMoreSearchList}
+            loader={<Spinner />}
+            style={{ overflow: "hidden" }}
+          >
+            <SearchList searchList={data?.items ?? []} />
+          </InfiniteScroll>
         </>
       )}
     </>

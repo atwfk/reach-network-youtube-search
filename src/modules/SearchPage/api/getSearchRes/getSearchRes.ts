@@ -4,13 +4,17 @@ import { VIDEOS_LIMITS } from "../../../shared/constants";
 import { IError } from "../../../shared/types/IError";
 import { IGetSearchRes } from "./IGetSearchRes";
 
-export const getSearchRes = async ({
-  query
-}: {
+type GetSearchRes = {
   query: string;
-}): Promise<IGetSearchRes.IResApi | IError.IErrorData> => {
+  nextPageToken?: string;
+};
+
+export const getSearchRes = async ({
+  query,
+  nextPageToken = ""
+}: GetSearchRes): Promise<IGetSearchRes.IResApi | IError.IErrorData> => {
   return getApi<IGetSearchRes.IResApi, IGetSearchRes.IResApi, IError.IErrorData>(
-    `/search?part=snippet&key=${API_KEY}&q=${query}&maxResults=${VIDEOS_LIMITS}`,
+    `/search?part=snippet&key=${API_KEY}&q=${query}&maxResults=${VIDEOS_LIMITS}&pageToken=${nextPageToken}`,
     (response) => {
       const { data } = response;
 
