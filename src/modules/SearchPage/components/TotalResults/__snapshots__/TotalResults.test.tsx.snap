@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TotalResults Component snapshots Should render simple TotalResults component 1`] = `
+.c0 {
+  font-weight: 400;
+}
+
+<h3
+  className="c0"
+>
+  About 
+  131,909
+   filtered results
+</h3>
+`;
