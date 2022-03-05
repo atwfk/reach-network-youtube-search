@@ -1,12 +1,10 @@
-declare namespace IImageLayer {
+declare namespace IChannelImage {
   export interface IProps {
     src: string;
     alt: string;
     width: string;
     height: string;
-    duration?: string;
-    playlistCount?: number;
   }
 }
 
-export { IImageLayer };
+export { IChannelImage };

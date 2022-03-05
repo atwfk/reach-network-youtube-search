@@ -2,10 +2,10 @@ import React from "react";
 import type { FC, ReactElement } from "react";
 import ItemDetails from "../ItemDetails";
 import { formateIntNum } from "../../../logic/transformIntNum/transformIntNum";
-import ImageLayer from "../ImageLayer";
 import { useMedia } from "../../../hooks/useMedia";
 import { SCREENS } from "../../../constants";
 import { IChannel } from "../../../types/searchData/IChannel";
+import ChannelImage from "../../atoms/ChannelImage";
 
 const Channel: FC<{ channel: IChannel }> = ({ channel }): ReactElement => {
   const matched = useMedia(`(max-width: ${SCREENS.SM})`);
@@ -20,12 +20,11 @@ const Channel: FC<{ channel: IChannel }> = ({ channel }): ReactElement => {
 
   return (
     <li className="search-item">
-      <ImageLayer
+      <ChannelImage
         alt={channel.snippet.title}
         width={`${imageWidth}`}
         height={`${imageHeight}`}
         src={channel.snippet.thumbnails.medium.url}
-        isChannel
       />
       <ItemDetails
         description={channel.snippet.description}

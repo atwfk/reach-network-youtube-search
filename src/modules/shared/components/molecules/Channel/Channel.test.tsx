@@ -11,9 +11,9 @@ describe("Channel Component RTL", () => {
 
     render(<Channel channel={channel} />);
 
-    const image = screen.getByTestId("image");
+    const image = screen.getByTestId("channel-image");
 
-    expect(image).toHaveAttribute("width", "320");
+    expect(image).toHaveAttribute("width", "180");
     expect(image).toHaveAttribute("height", "180");
   });
 
@@ -22,9 +22,9 @@ describe("Channel Component RTL", () => {
 
     render(<Channel channel={channel} />);
 
-    const image = screen.getByTestId("image");
+    const image = screen.getByTestId("channel-image");
 
-    expect(image).toHaveAttribute("width", "120");
+    expect(image).toHaveAttribute("width", "90");
     expect(image).toHaveAttribute("height", "90");
   });
 });

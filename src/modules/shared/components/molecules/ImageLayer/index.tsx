@@ -11,12 +11,11 @@ const ImageLayer: FC<IImageLayer.IProps> = ({
   width,
   height,
   duration,
-  playlistCount,
-  isChannel
+  playlistCount
 }): ReactElement => {
   return (
     <StyledImageLayer className="image-container">
-      <Image alt={alt} height={`${height}`} width={`${width}`} src={src} isChannel={isChannel} />
+      <Image alt={alt} height={`${height}`} width={`${width}`} src={src} />
       {duration && (
         <span className="duration" data-testid="duration">
           {duration}
