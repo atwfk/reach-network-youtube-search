@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import type { FC, ReactElement } from "react";
 import { IVideo } from "../../../types/searchData/IVideo";
 import ItemDetails from "../ItemDetails";
@@ -38,4 +38,4 @@ const Video: FC<{ video: IVideo }> = ({ video }): ReactElement => {
   );
 };
 
-export default Video;
+export default memo(Video);

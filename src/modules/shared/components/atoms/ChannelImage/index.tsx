@@ -7,7 +7,14 @@ const ChannelImage: FC<IChannelImage.IProps> = ({ src, alt, width, height }): Re
   return (
     <StyledImageContainer className="image-container">
       <div className="image-layer" style={{ width: `${width}px` }}>
-        <img src={src} alt={alt} width={height} height={height} data-testid="channel-image" />
+        <img
+          src={src}
+          alt={alt}
+          width={height}
+          height={height}
+          data-testid="channel-image"
+          loading="lazy"
+        />
       </div>
     </StyledImageContainer>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import type { FC, ReactElement } from "react";
 import ItemDetails from "../ItemDetails";
 import ImageLayer from "../ImageLayer";
@@ -36,4 +36,4 @@ const Playlist: FC<{ playlist: IPlaylist }> = ({ playlist }): ReactElement => {
   );
 };
 
-export default Playlist;
+export default memo(Playlist);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import type { FC, ReactElement } from "react";
 import ItemDetails from "../ItemDetails";
 import { formateIntNum } from "../../../logic/transformIntNum/transformIntNum";
@@ -35,4 +35,4 @@ const Channel: FC<{ channel: IChannel }> = ({ channel }): ReactElement => {
   );
 };
 
-export default Channel;
+export default memo(Channel);
