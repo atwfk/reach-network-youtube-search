@@ -35,6 +35,7 @@ exports[`ChannelImage Component snapshots Should render simple ChannelImage comp
       alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
       data-testid="channel-image"
       height="180"
+      loading="lazy"
       src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
       width="180"
     />

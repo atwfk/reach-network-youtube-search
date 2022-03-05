@@ -50,6 +50,7 @@ exports[`ImageLayer Component snapshots Should render ImageLayer component with 
     alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
     data-testid="image"
     height="180"
+    loading="lazy"
     src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
     width="320"
   />
@@ -112,6 +113,7 @@ exports[`ImageLayer Component snapshots Should render ImageLayer component with 
     alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
     data-testid="image"
     height="180"
+    loading="lazy"
     src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
     width="320"
   />
