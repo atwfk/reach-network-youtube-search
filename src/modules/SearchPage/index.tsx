@@ -32,6 +32,10 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
       try {
         const searchListDetails = (await getAllSearchList({ query: value })) as IData.IMainData;
 
+        const totalResults = searchListDetails?.pageInfo?.totalResults ?? 0;
+        const length = searchListDetails?.items?.length ?? 0 + 1;
+
+        setHasMoreSearchList(totalResults > length);
         setData(searchListDetails);
       } catch (err: unknown) {
         const { message } = err as IError.IErrorData;
