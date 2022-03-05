@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Component snapshots Should render simple Image component 1`] = `
+<img
+  alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+  data-testid="image"
+  height="180"
+  src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
+  width="320"
+/>
+`;

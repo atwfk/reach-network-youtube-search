@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChannelImage Component snapshots Should render simple ChannelImage component 1`] = `
+.c0 .image-layer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .image-layer img {
+  border-radius: 50%;
+}
+
+<div
+  className="c0 image-container"
+>
+  <div
+    className="image-layer"
+    style={
+      Object {
+        "width": "320px",
+      }
+    }
+  >
+    <img
+      alt="Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]"
+      data-testid="channel-image"
+      height="180"
+      src="https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg"
+      width="180"
+    />
+  </div>
+</div>
+`;
