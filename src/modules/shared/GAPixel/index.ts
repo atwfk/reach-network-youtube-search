@@ -7,7 +7,7 @@ interface PixelEvent {
   gaOptions?: Record<string, string | number>;
 }
 
-type PixelCategory = "clicks" | "page-view";
+type PixelCategory = "clicks" | "page_view";
 
 const logEvent = (data: PixelEvent): void => {
   for (const field in data.gaOptions) ReactGA.set({ [field]: data.gaOptions[field] });
@@ -26,7 +26,7 @@ export const GAClicks = (action: string): void =>
 
 export const GAPageViews = (action: string, pageName: string): void =>
   logEvent({
-    category: "page-view",
+    category: "page_view",
     action,
     label: pageName
   });
