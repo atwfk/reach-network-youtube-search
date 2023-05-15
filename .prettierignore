@@ -3,5 +3,4 @@
 .config
 node_modules/*
 config/*
-public/*
 scripts/*
