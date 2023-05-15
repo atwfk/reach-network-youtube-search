@@ -6,17 +6,20 @@ import { StyledSearchForm } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useMedia } from "../../../hooks/useMedia";
 import { SCREENS } from "../../../constants";
+import useAnalytics from "../../../hooks/useAnalytics";
 
 const SearchForm: FC = (): ReactElement => {
   const [inputVal, setInputVal] = useState("");
   const [showInput, setShowInput] = useState(true);
   const matched = useMedia(`(max-width: ${SCREENS.SM})`);
   const navigate = useNavigate();
+  const { logEvent } = useAnalytics();
 
   const submitSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setShowInput(false);
     navigate(`/search?query=${inputVal}`);
+    logEvent("GAClicks", "search-video-click-guest");
   };
 
   return (

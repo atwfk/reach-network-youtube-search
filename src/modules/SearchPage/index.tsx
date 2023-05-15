@@ -14,6 +14,8 @@ import { IChannel } from "../shared/types/searchData/IChannel";
 import { IPlaylist } from "../shared/types/searchData/IPlaylist";
 import { useQuery } from "../shared/hooks/useQuery";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
+import useAnalytics from "../shared/hooks/useAnalytics";
 
 const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> = ({
   setLoading,
@@ -24,6 +26,12 @@ const SearchPage: FC<{ setLoading: (val: boolean) => void; loading: boolean }> =
 
   const matched = useMedia(`(max-width: ${SCREENS.SM})`);
   const value = useQuery().get("query") ?? "";
+  const { pathname } = useLocation();
+  const { logEvent } = useAnalytics();
+
+  useEffect(() => {
+    logEvent("GAPageViews", "guest-pageview-searchPage", pathname);
+  }, []);
 
   useEffect(() => {
     const getSearchData = async () => {
