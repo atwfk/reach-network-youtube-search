@@ -3,7 +3,7 @@ import type { FC, ReactElement, FormEvent } from "react";
 import TextInput from "../../atoms/TextInput";
 import SearchBtn from "../../atoms/SearchBtn";
 import { StyledSearchForm } from "./styles";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useMedia } from "../../../hooks/useMedia";
 import { SCREENS } from "../../../constants";
 import useAnalytics from "../../../hooks/useAnalytics";
@@ -13,6 +13,7 @@ const SearchForm: FC = (): ReactElement => {
   const [showInput, setShowInput] = useState(true);
   const matched = useMedia(`(max-width: ${SCREENS.SM})`);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { logEvent } = useAnalytics();
 
   const submitSearch = (e: FormEvent<HTMLFormElement>) => {
@@ -20,6 +21,7 @@ const SearchForm: FC = (): ReactElement => {
     setShowInput(false);
     navigate(`/search?query=${inputVal}`);
     logEvent("GAClicks", "search-video-click-guest");
+    logEvent("GASearch", inputVal, pathname);
   };
 
   return (

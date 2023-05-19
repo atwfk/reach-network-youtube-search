@@ -1,13 +1,13 @@
 import ReactGA from "react-ga4";
 
 interface PixelEvent {
-  category: PixelCategory;
-  action: string;
+  category: string;
+  action: PixelEventNames;
   label?: string;
   gaOptions?: Record<string, string | number>;
 }
 
-type PixelCategory = "clicks" | "page_view";
+type PixelEventNames = "clicks" | "page_view" | "search";
 
 const logEvent = (data: PixelEvent): void => {
   for (const field in data.gaOptions) ReactGA.set({ [field]: data.gaOptions[field] });
@@ -18,15 +18,22 @@ const logEvent = (data: PixelEvent): void => {
   });
 };
 
-export const GAClicks = (action: string): void =>
+export const GAClicks = (category: string): void =>
   logEvent({
-    category: "clicks",
-    action
+    category: category,
+    action: "clicks"
   });
 
-export const GAPageViews = (action: string, pageName: string): void =>
+export const GAPageViews = (category: string, pageName: string): void =>
   logEvent({
-    category: "page_view",
-    action,
+    category: category,
+    action: "page_view",
+    label: pageName
+  });
+
+export const GASearch = (searchValue: string, pageName: string): void =>
+  logEvent({
+    category: `user-searched-${searchValue}`,
+    action: "search",
     label: pageName
   });
