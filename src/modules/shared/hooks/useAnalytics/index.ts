@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck comment
-import { GAClicks, GAPageViews } from "../../GAPixel";
+import { GAClicks, GAPageViews, GASearch } from "../../GAPixel";
 const EVENTS = { GAClicks, GAPageViews, GASearch };
 
 type EventKeys = keyof typeof EVENTS;
